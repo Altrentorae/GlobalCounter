@@ -24,6 +24,7 @@ namespace GlobalCounter {
         private KeyHandler ghk;
 
         public void main() {
+            if (!System.IO.File.Exists(@"count.txt")) { System.IO.File.Create(@"count.txt"); }
             string fileCount = System.IO.File.ReadAllText(@"count.txt");
             Int32.TryParse(fileCount, out count);
             countLabel.Text = count.ToString();
